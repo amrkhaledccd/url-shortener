@@ -1,0 +1,18 @@
+version: '3'
+services:
+  app:
+    build: .
+    container_name: "flixbus_url_shortener"
+    environment:
+      - spring.data.mongodb.host=mongodb
+    links:
+      - mongodb
+    ports:
+      - 8080:8080
+  mongodb:
+    image: mongo:latest
+    container_name: "mongodb"
+    environment:
+      - MONGO_LOG_DIR=/dev/null
+    ports:
+      - 27017:27017
