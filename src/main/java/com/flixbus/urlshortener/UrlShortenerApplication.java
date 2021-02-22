@@ -32,6 +32,6 @@ public class UrlShortenerApplication implements WebMvcConfigurer {
 
 	@Bean
 	public LockProvider lockProvider(MongoClient mongo) {
-		return new MongoLockProvider(mongo.getDatabase("vehicles_tracker"));
+		return new MongoLockProvider(mongo.getDatabase("flixbus_url_shortener"));
 	}
 }
