@@ -1,4 +1,3 @@
-# FlixBus backend applicant test
 
 ## Solution Description
 
