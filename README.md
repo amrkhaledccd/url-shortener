@@ -29,9 +29,6 @@ want to complicate things too much for the task.
 
 ## More about the KeyGenerationSchedule
 
-First, I want to mention that if I had more time, I would extract this part in a separate service 
-for a better scalability and separation of concerns.
-
 Currently, the KeyGenerationScheduler runs every 100ms and generate a key, make sure it is unique and store it in the DB.
 The keys are marked as not used, and if there are 500 not used keys, the scheduler will not generate any more keys,
 until the number is below 500 (of course this number can be adjusted depends on the load).
@@ -46,7 +43,7 @@ same key at the same time. It uses Optimistic Locking, each key has a version th
 if the current thread has an outdated object, it will find another key.
 
 ## Caching
-If I had more time, I would use a distributed caching to store the generated keys for the fast access. Also, I would 
+I would use a distributed caching to store the generated keys for the fast access. Also, I would 
 cache the mapping between key and the original url.
 
 ## DB sharding 
