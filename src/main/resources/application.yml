@@ -4,7 +4,7 @@ server:
 spring:
   data:
     mongodb:
-      database: flixbus_url_shortener
+      database: render-test
       url: mongodb+srv://testuser:7wwSdQvIMOlu6QV2@render-test.97njqdq.mongodb.net/?retryWrites=true&w=majority
       auto-index-creation: true
 
